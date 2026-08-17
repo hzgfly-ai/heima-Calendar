@@ -1,6 +1,23 @@
 {
-  "_comment": "课程数据。AI 维护。请勿手动修改。字段说明见 README。",
-  "term_start": "2026-09-01",
-  "weeks": 20,
-  "courses": []
+  "_comment": "课程数据。AI 维护。courses=周课表,events=具体日期课表。可并存。",
+  "calname": "黑马课表",
+  "term_start": "2026-09-07",
+  "courses": [],
+  "events": [
+    {"date": "2026-08-17", "name": "自习",       "type": "self_study"},
+    {"date": "2026-08-18", "name": "提示词工程V3.0",     "location": "上海213", "type": "course"},
+    {"date": "2026-08-19", "type": "rest"},
+    {"date": "2026-08-20", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-21", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-22", "name": "自习",       "type": "self_study"},
+    {"date": "2026-08-23", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-24", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-25", "type": "rest"},
+    {"date": "2026-08-26", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-27", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-28", "name": "自习",       "type": "self_study"},
+    {"date": "2026-08-29", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-30", "name": "智能体开发 (Coze+Dify)", "location": "上海213", "type": "course"},
+    {"date": "2026-08-31", "type": "rest"}
+  ]
 }
