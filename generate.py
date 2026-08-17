@@ -35,8 +35,9 @@ def fmt_d(d: date) -> str:
     return d.strftime("%Y%m%d")
 
 
-def all_day(d: date, summary: str, location: str = "") -> list:
+def all_day(d: date, summary: str, location: str = "", teacher: str = "") -> list:
     """生成全天事件(00:00 → 次日 00:00)。全天事件用 VALUE=DATE 标记"""
+    desc = escape(f"老师:{teacher}") if teacher else ""
     lines = [
         "BEGIN:VEVENT",
         f"UID:allday-{summary}-{d.isoformat()}@heima-calendar",
@@ -45,6 +46,7 @@ def all_day(d: date, summary: str, location: str = "") -> list:
         f"DTEND;VALUE=DATE:{fmt_d(d + timedelta(days=1))}",
         f"SUMMARY:{escape(summary)}",
         f"LOCATION:{escape(location)}" if location else "LOCATION:",
+        f"DESCRIPTION:{desc}" if desc else "DESCRIPTION:",
         "TRANSP:TRANSPARENT",
         "END:VEVENT",
     ]
@@ -135,8 +137,9 @@ def build_events(events: list, lines: list) -> int:
         d = datetime.strptime(e["date"], "%Y-%m-%d").date()
         name = e.get("name") or ("自习" if etype == "self_study" else "课程")
         location = e.get("location", "")
+        teacher = e.get("teacher", "")
 
-        lines.extend(all_day(d, name, location))
+        lines.extend(all_day(d, name, location, teacher))
         count += 1
 
     return count
